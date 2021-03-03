@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM manip test experiment</title>
+  <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="container">
+    <div class="contained" id="users-index">
+      <div id="a" class="user-link">A</div>
+      <div id="b" class="user-link">B</div>
+      <div id="c" class="user-link">C</div>
+    </div>
+    <div class="contained" id="users-show">
+      <div id="a-content" class="user-details hidden">Details About A</div>
+      <div id="b-content" class="user-details hidden">Details About B</div>
+      <div id="c-content" class="user-details hidden">Details About C</div>
+
+    </div>
+    <div class="contained" id="mocha"></div>
+  </div>
+  
+
+  <script src="https://unpkg.com/chai/chai.js"></script>
+  <script src="https://unpkg.com/mocha/mocha.js"></script>
+
+  <script class="mocha-init">
+    mocha.setup('bdd');
+    mocha.checkLeaks();
+  </script>
+  <script src="./script.js"></script>
+  <script src="./test.js"></script>
+  <script class="mocha-exec">
+    mocha.run();
+  </script>
+</body>
+</html>
